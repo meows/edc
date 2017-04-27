@@ -1,8 +1,8 @@
 // -----------------------------------------------------------------------------
 // Utility Functions
 
-function log(...a) {
-   return console.log(...a)
+function log(msg, ...a) {
+   return console.log(msg, ...a)
 }
 
 function logT(text:string) {
