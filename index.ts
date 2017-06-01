@@ -1,23 +1,17 @@
 // -----------------------------------------------------------------------------
 // Utility Functions
 
-function log(msg, ...a) {
-   return console.log(msg, ...a)
-}
-
-function logT(text:string) {
-   return (...a) => console.log(`${text}`, ...a)
-}
+const log = (msg, ...a) => console.log(msg, ...a)
+const logT = (text:string) => (...a) => console.log(`${text}`, ...a)
 
 // a proxy for Object.assign() that strips prototype
-function noProto(...a) {
-   return Object.assign(Object.create(null), ...a)
-}
+const noProto = (...a) => Object.assign(Object.create(null), ...a)
 
 // composes a list of functions from left to right
-function compose(...fn:Function[]) {
-   return fn.reduceRight((f, g) => (...a) => f(g(...a)))
-}
+const compose = (...fn:Function[]) => fn.reduceRight((f, g) => (...a) => f(g(...a)))
+
+// flips a shallow boolean property
+const flipProp = (obj, prop) => Object.assign({}, obj, {[prop]: !obj[prop]})
 
 // -----------------------------------------------------------------------------
 // Constants
