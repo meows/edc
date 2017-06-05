@@ -13,8 +13,11 @@ const compose = (...fn:Function[]) => fn.reduceRight((f, g) => (...a) => f(g(...
 // flips a shallow boolean property
 const flipProp = (obj, prop) => Object.assign({}, obj, {[prop]: !obj[prop]})
 
-// randomIntegers :: integer -> integers[]
+// returns an array of random integers
 const randomIntegers = (n: number) => window.crypto.getRandomValues(new Uint16Array(n))
+
+// filters an array for redundant items
+const uniqueArray = (array: any[]) => [...new Set(array)]
 
 // -----------------------------------------------------------------------------
 // Constants
