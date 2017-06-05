@@ -13,6 +13,9 @@ const compose = (...fn:Function[]) => fn.reduceRight((f, g) => (...a) => f(g(...
 // flips a shallow boolean property
 const flipProp = (obj, prop) => Object.assign({}, obj, {[prop]: !obj[prop]})
 
+// randomIntegers :: integer -> integers[]
+const randomIntegers = (n: number) => window.crypto.getRandomValues(new Uint16Array(n))
+
 // -----------------------------------------------------------------------------
 // Constants
 
